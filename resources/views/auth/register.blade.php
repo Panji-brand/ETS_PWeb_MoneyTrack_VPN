@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>MoneyTrack | Buat Akun</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f5f6fb;font-family:Arial,sans-serif;color:#202437;padding:24px}.auth-card{width:100%;max-width:430px;background:#fff;padding:32px;border-radius:16px;box-shadow:0 10px 35px #20243712}.brand{font-size:24px;font-weight:800;color:#6554ff;margin-bottom:8px}h1{margin:0 0 8px}.muted{color:#697086;margin:0 0 24px}label{display:block;font-weight:600;margin:16px 0 7px}input[type=text],input[type=email],input[type=password]{width:100%;padding:12px;border:1px solid #dfe2ec;border-radius:8px;font-size:15px}.remember{display:flex;align-items:center;gap:8px;font-weight:400}button{width:100%;margin-top:20px;border:0;border-radius:8px;background:#6554ff;color:white;padding:13px;font-weight:700;font-size:15px;cursor:pointer}.foot{text-align:center;margin-top:20px;color:#697086}a{color:#6554ff}.error{background:#fff0f0;color:#a42626;border-radius:8px;padding:12px;margin:14px 0}.success{background:#effaf1;color:#206b34;padding:12px;border-radius:8px;margin:14px 0}
+</style></head><body><main class="auth-card"><div class="brand">MoneyTrack</div><h1>Buat Akun</h1><p class="muted">Catat dan kelola keuangan pribadimu.</p>
+@if (session('success'))<div class="success">{ session('success') }</div>@endif
+@if ($errors->any())<div class="error"><ul style="margin:0;padding-left:20px">@foreach ($errors->all() as $error)<li>{ $error }</li>@endforeach</ul></div>@endif
+<form method="POST" action="{{ route('register.store') }}">@csrf
+<label for="name">Nama</label><input id="name" type="text" name="name" value="{{ old('name') }}" autocomplete="name" required autofocus>
+            <label for="email">Email</label><input id="email" type="email" name="email" value="{{ old('email') }}" autocomplete="email" required>
+            <label for="password">Password (minimal 8 karakter)</label><input id="password" type="password" name="password" autocomplete="new-password" required>
+            <label for="password_confirmation">Konfirmasi password</label><input id="password_confirmation" type="password" name="password_confirmation" autocomplete="new-password" required>
+<button type="submit">Buat Akun</button></form><div class="foot">Sudah punya akun? <a href="{{ route('login') }}">Masuk</a></div></main></body></html>
