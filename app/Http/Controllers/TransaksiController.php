@@ -36,7 +36,7 @@ class TransaksiController extends Controller
                 ),
             ],
             'judul' => ['required', 'string', 'max:255'],
-            'nominal' => ['required', 'numeric', 'gt:0'],
+            'nominal' => ['required', 'numeric', 'gt:0', 'max:9999999999999.99'],
             'tanggal' => ['required', 'date'],
             'catatan' => ['nullable', 'string'],
         ]);

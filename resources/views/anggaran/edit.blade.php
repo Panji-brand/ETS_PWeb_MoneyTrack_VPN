@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <h1>Edit Transaksi</h1>
-    <p>Perbarui informasi transaksi kamu melalui formulir berikut.</p>
+    <h1>Edit Anggaran</h1>
+    <p>Perbarui informasi anggaran kamu melalui formulir berikut.</p>
 
     @if ($errors->any())
         <div class="alert alert-danger">

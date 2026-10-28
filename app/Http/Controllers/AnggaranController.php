@@ -36,6 +36,7 @@ class AnggaranController extends Controller
                 'required',
                 'numeric',
                 'min:0.01',
+                'max:9999999999999.99',
             ],
             'bulan' => [
                 'required',
@@ -108,6 +109,7 @@ class AnggaranController extends Controller
             'required',
             'numeric',
             'min:0.01',
+            'max:9999999999999.99',
         ],
         'bulan' => [
             'required',
